@@ -3,7 +3,14 @@ import { Avatar } from '@material-ui/core'
 
 import "./Sidebar.scss"
 export const Sidebar = () => {
-    return (
+
+    const recentItem = (topic) => {
+        return <div className="sidebar__recentItem">
+                 <span className="sidebar__hash">#</span>
+                 <p>{topic}</p>
+              </div>
+    }
+   return (
         <div className="sidebar">
             <div className="sidebar__top">
                 <img src="https://media-exp1.licdn.com/dms/image/C4D16AQFnpQ1Eh_UQdQ/profile-displaybackgroundimage-shrink_350_1400/0/1628512105117?e=1639612800&v=beta&t=xWFM-9opNQaTUnCWNK5tNLrP7dBTICADk9Jt9NkKTDg" alt="avatarBg" />
@@ -22,6 +29,11 @@ export const Sidebar = () => {
             </div>
             <div className="sidebar__bottom">
                 <p>Recent</p>
+                {recentItem("reactjs")}
+                {recentItem("programming")}
+                {recentItem("softwareengineering")}
+                {recentItem("design")}
+                {recentItem("developer")}
             </div>
         </div>
     )
