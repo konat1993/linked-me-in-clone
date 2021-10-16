@@ -6,8 +6,9 @@ import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined'
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined'
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
 
-import "./Post.scss"
 import InputOption from './InputOption'
+
+import "./Post.scss"
 export const Post = (props) => {
     const {name, description, message, photoUrl} = props
     return (
