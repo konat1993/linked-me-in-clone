@@ -59,7 +59,7 @@ const handleSubmit = (e) => {
                 <div className="feed__input">
                     <CreateIcon />
                     <form onSubmit={handleSubmit} action="">
-                        <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} />
+                        <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} placeholder="Start a post" />
                         <button onClick={sendPost} type="submit">Send</button>
                     </form>
                 </div>
