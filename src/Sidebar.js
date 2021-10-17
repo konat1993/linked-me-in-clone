@@ -19,7 +19,7 @@ const user = useSelector(selectUser)
         <div className="sidebar">
             <div className="sidebar__top">
                 <img src="https://media-exp1.licdn.com/dms/image/C4D16AQFnpQ1Eh_UQdQ/profile-displaybackgroundimage-shrink_350_1400/0/1628512105117?e=1639612800&v=beta&t=xWFM-9opNQaTUnCWNK5tNLrP7dBTICADk9Jt9NkKTDg" alt="avatarBg" />
-                <Avatar className="sidebar__avatar">
+                <Avatar src={user?.photoUrl} className="sidebar__avatar">
                     {user.email[0].toUpperCase()}
                 </Avatar>
                 <h2>{user.displayName}</h2>
