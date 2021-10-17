@@ -12,6 +12,8 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import AppsIcon from '@material-ui/icons/Apps';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 import "./Header.scss"
 import { auth } from './firebase';
@@ -24,25 +26,30 @@ export const Header = () => {
     }
 
     return (
-        <div className="header">
-            <div className="header__left">
-                <LinkedInIcon />
-                <div className="header__search">
-                   <SearchIcon />
-                    <input type="text" placeholder="Search" />
+        <div className="headerContainer">
+            <div className="header">
+                <div className="header__left">
+                    <LinkedInIcon />
+                    <div className="header__search">
+                    <SearchIcon />
+                        <input type="text" placeholder="Search" />
+                    </div>
                 </div>
-            </div>
-            <div className="header__right">
-                <HeaderOption Icon={HomeIcon} title="Home"/>
-                <HeaderOption Icon={SupervisorAccountIcon} title="My Network"/>
-                <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
-                <HeaderOption Icon={ChatIcon} title="Messaging"/>
-                <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
-                <HeaderOption
-                  avatar={true}
-                  title="Me"
-                  onClick={logoutOfApp}
-                />
+                <div className="header__right">
+                    <HeaderOption Icon={HomeIcon} title="Home"/>
+                    <HeaderOption Icon={SupervisorAccountIcon} title="My Network"/>
+                    <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
+                    <HeaderOption Icon={ChatIcon} title="Messaging"/>
+                    <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
+                    <HeaderOption
+                    avatar={true}
+                    title="Me"
+                    onClick={logoutOfApp}
+                    breakLine={true}
+                    />
+                    <HeaderOption Icon={AppsIcon} title="Praca"/>
+                    <HeaderOption Icon={AssignmentIcon} title="Opublikuj ofertę pracy"/>
+                </div>
             </div>
         </div>
     )

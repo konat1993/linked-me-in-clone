@@ -4,12 +4,21 @@ import { selectUser } from './features/userSlice'
 import { useSelector } from 'react-redux'
 import { Avatar } from '@material-ui/core'
 
+import classNames from 'classnames';
+
+
 import "./HeaderOption.scss"
+const headerOptionClasses = (breakLine) => {
+    return classNames("headerOption", {
+        breakLine: breakLine
+    });
+  };
+
 export const HeaderOption = (props) => {
-    const {avatar, Icon, title, onClick} = props
+    const {avatar, Icon, title, onClick, breakLine} = props
     const user = useSelector(selectUser)
     return (
-        <div onClick={onClick} className="headerOption">
+        <div onClick={onClick} className={headerOptionClasses(breakLine)}>
             {Icon && <Icon className="headerOption__icon" />}
             {avatar && (
                 <Avatar

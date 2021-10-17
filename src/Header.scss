@@ -1,44 +1,54 @@
-.header {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: 0.1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 8px;
+.headerContainer {
     width: 100%;
-    //max-width: 1200px;
-    z-index: 999;
-    &__left {
-        display: flex;
-        > svg {
-            color: #0a66c2;
-            height: 51px;
-            width: 51px;
-            margin-right: 4px;
-        }
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 0.1px solid lightgray;
 
-        .header__search {
-            padding: 10px;
-            margin-top: 5px;
+    .header {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1128px;
+        z-index: 999;
+        &__left {
             display: flex;
             align-items: center;
-            border-radius: 5px;
-            height: 40px;
-            color: gray;
-            background-color: #eef3f8;
+            > svg {
+                color: #0a66c2;
+                height: 45px;
+                width: 45px;
+                margin-right: 4px;
+            }
 
-            input {
-                outline: none;
-                border: none;
-                background: none;
+            .header__search {
+                width: 280px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                padding: 0 10px;
+                height: 34px;
                 color: gray;
+                background-color: #eef3f8;
+
+                input {
+                    outline: none;
+                    border: none;
+                    background: none;
+                    color: gray;
+                }
             }
         }
-    }
 
-    &__right {
+        &__right {
+        height: 100%;
         display: flex;
+
+        }
     }
 }
