@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from './features/userSlice';
 
 import HeaderOption from './HeaderOption';
+import MoreIconsTaker from './MoreIconsTaker';
 
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import SearchIcon from '@material-ui/icons/Search';
@@ -17,6 +18,15 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 
 import "./Header.scss"
 import { auth } from './firebase';
+
+const iconGroup = [
+    ChatIcon,
+    NotificationsIcon,
+    "avatar",
+    AppsIcon,
+    AssignmentIcon
+]
+
 export const Header = () => {
     const dispatch = useDispatch()
 
@@ -25,14 +35,19 @@ export const Header = () => {
         auth.signOut()
     }
 
+    const handleOptionClick = () => {
+        logoutOfApp()
+    }
+
     return (
         <div className="headerContainer">
             <div className="header">
                 <div className="header__left">
                     <LinkedInIcon />
                     <div className="header__search">
-                    <SearchIcon />
+                        <SearchIcon />
                         <input type="text" placeholder="Search" />
+                        <div className="searchText">Search</div>
                     </div>
                 </div>
                 <div className="header__right">
@@ -44,11 +59,13 @@ export const Header = () => {
                     <HeaderOption
                     avatar={true}
                     title="Me"
-                    onClick={logoutOfApp}
+                    onClick={handleOptionClick}
                     breakLine={true}
                     />
                     <HeaderOption Icon={AppsIcon} title="Praca"/>
                     <HeaderOption Icon={AssignmentIcon} title="Opublikuj ofertę pracy"/>
+
+                    <MoreIconsTaker icons={iconGroup} handleOptionClick={handleOptionClick}/>
                 </div>
             </div>
         </div>

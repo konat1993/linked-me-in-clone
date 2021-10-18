@@ -8,17 +8,18 @@ import classNames from 'classnames';
 
 
 import "./HeaderOption.scss"
-const headerOptionClasses = (breakLine) => {
+const headerOptionClasses = (props) => {
     return classNames("headerOption", {
-        breakLine: breakLine
+        breakLine: props.breakLine,
+        [props.className]: props.className
     });
   };
 
 export const HeaderOption = (props) => {
-    const {avatar, Icon, title, onClick, breakLine} = props
+    const {avatar, Icon, title, onClick} = props
     const user = useSelector(selectUser)
     return (
-        <div onClick={onClick} className={headerOptionClasses(breakLine)}>
+        <div onClick={onClick} className={headerOptionClasses(props)}>
             {Icon && <Icon className="headerOption__icon" />}
             {avatar && (
                 <Avatar

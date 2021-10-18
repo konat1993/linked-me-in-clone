@@ -1,0 +1,82 @@
+.moreIconsTaker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .moreIconsWrapper {
+        display: flex;
+    }
+
+    &__icons {
+        background-color: white;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        padding: 15px 5px;
+        border-radius: 8px;
+        border-top-right-radius: 0;
+        box-shadow: 0 5px 6px -2px gray;
+
+        .moreIconsTaker__icon {
+            margin: 0 10px;
+        }
+    }
+}
+
+//560px
+@media screen and (max-width: 560px) {
+    .moreIconsTaker__icons {
+        display: flex;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.2s ease-in-out;
+
+        .moreIconsTaker__icon {
+            display: none;
+
+            &:nth-last-child(1) {
+                display: inherit;
+            }
+            &:nth-last-child(2) {
+                display: inherit;
+            }
+        }
+    }
+
+    .fadeIn {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .fadeOut {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+//460px
+@media screen and (max-width: 460px) {
+    .moreIconsTaker__icons {
+        .moreIconsTaker__icon {
+            &:nth-last-child(3) {
+                display: inherit;
+            }
+        }
+    }
+}
+//400px
+@media screen and (max-width: 400px) {
+    .moreIconsTaker__icons {
+        .moreIconsTaker__icon {
+            &:nth-last-child(4) {
+                display: inherit;
+            }
+            &:nth-last-child(5) {
+                display: inherit;
+            }
+        }
+    }
+}

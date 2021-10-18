@@ -7,9 +7,27 @@
 
 .app__body {
     display: flex;
-    margin-top: 35px;
+    margin: 35px 20px 20px 20px;
     max-width: 1128px;
-    margin-left: 20px;
-    margin-right: 20px;
     width: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+    .app__body {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .app__body {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app__body {
+        flex-direction: column;
+        max-width: 80vw;
+    }
+}
+

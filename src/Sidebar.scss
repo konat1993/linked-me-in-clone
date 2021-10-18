@@ -1,6 +1,6 @@
 .sidebar {
     position: sticky;
-    top: 35px;
+    top: 80px;
     flex: 0.2;
     border-radius: 10px;
     text-align: center;
@@ -95,5 +95,16 @@
                 margin-left: 5px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        flex: 0.3;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: static;
     }
 }
