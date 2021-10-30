@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { useDispatch } from 'react-redux';
-import { logout } from './features/userSlice';
+import { logout, selectUser } from '../../features/userSlice';
 
-import HeaderOption from './HeaderOption';
-import MoreIconsTaker from './MoreIconsTaker';
+import HeaderOption from '../HeaderOption/HeaderOption';
+import MoreIconsTaker from '../MoreIconsTaker/MoreIconsTaker';
 
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import SearchIcon from '@material-ui/icons/Search';
@@ -17,7 +17,8 @@ import AppsIcon from '@material-ui/icons/Apps';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
 import "./Header.scss"
-import { auth } from './firebase';
+import { auth } from '../../services/firebase';
+import { useSelector } from 'react-redux';
 
 const iconGroup = [
     ChatIcon,
@@ -29,6 +30,7 @@ const iconGroup = [
 
 export const Header = () => {
     const dispatch = useDispatch()
+    const user = useSelector(selectUser)
 
     const logoutOfApp = () => {
         dispatch(logout())
@@ -51,21 +53,21 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="header__right">
-                    <HeaderOption Icon={HomeIcon} title="Home"/>
-                    <HeaderOption Icon={SupervisorAccountIcon} title="My Network"/>
-                    <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
-                    <HeaderOption Icon={ChatIcon} title="Messaging"/>
-                    <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
+                    <HeaderOption Icon={HomeIcon} title="Home" />
+                    <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
+                    <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
+                    <HeaderOption Icon={ChatIcon} title="Messaging" />
+                    <HeaderOption Icon={NotificationsIcon} title="Notifications" />
                     <HeaderOption
-                    avatar={true}
-                    title="Me"
-                    onClick={handleOptionClick}
-                    breakLine={true}
+                        avatar={true}
+                        title={user ? `Log out` : `User`}
+                        onClick={handleOptionClick}
+                        breakLine={true}
                     />
-                    <HeaderOption Icon={AppsIcon} title="Praca"/>
-                    <HeaderOption Icon={AssignmentIcon} title="Opublikuj ofertę pracy"/>
+                    <HeaderOption Icon={AppsIcon} title="Praca" />
+                    <HeaderOption Icon={AssignmentIcon} title="Opublikuj ofertę pracy" />
 
-                    <MoreIconsTaker icons={iconGroup} handleOptionClick={handleOptionClick}/>
+                    <MoreIconsTaker icons={iconGroup} handleOptionClick={handleOptionClick} />
                 </div>
             </div>
         </div>

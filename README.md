@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+```diff
+See demo project below:
+- Notice: Most buttons are not clickable. This is just a DEMO page which is not fully finished yet.
+```
+
+## [DEMO Project: https://linked-me-in.web.app/](https://linked-me-in.web.app/)
+
+## User features:
+- Authentication(login/logout)
+- Share message posts
+
 ## Available Scripts
 
 In the project directory, you can run:

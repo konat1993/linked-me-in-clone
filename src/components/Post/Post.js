@@ -6,7 +6,7 @@ import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined'
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined'
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
 
-import InputOption from './InputOption'
+import InputOption from '../InputOption/InputOption'
 
 import "./Post.scss"
 export const Post = forwardRef((props, ref) => {

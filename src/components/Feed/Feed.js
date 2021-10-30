@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 import firebase from "firebase"
-import { db } from './firebase'
+import { db } from '../../services/firebase'
 
-import { selectUser } from './features/userSlice'
+import { selectUser } from '../../features/userSlice'
 import { useSelector } from 'react-redux'
 
 import FlipMove from "react-flip-move"
@@ -14,8 +14,8 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
 import EventNoteIcon from '@material-ui/icons/EventNote'
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay'
 
-import InputOption from './InputOption'
-import Post from './Post'
+import InputOption from '../InputOption/InputOption'
+import Post from '../Post/Post'
 
 import "./Feed.scss"
 export const Feed = () => {

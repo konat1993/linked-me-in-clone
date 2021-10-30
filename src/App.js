@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { auth } from './firebase';
+import { auth } from './services/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 
-import Login from "./Login"
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Feed from './Feed';
-import Widgets from "./Widgets"
+import HomePage from './pages/HomePage/HomePage';
+import Login from "./pages/Login/Login"
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Feed from './components/Feed/Feed';
+import Widgets from "./components/Widgets/Widgets"
 
 import './App.css';
 function App() {
@@ -18,7 +19,7 @@ function App() {
     //Checking if authorization is OK to log in user automatically
     //it is a listener which listens any sort of authentication (persisted)
     auth.onAuthStateChanged(userAuth => {
-      if(userAuth) {
+      if (userAuth) {
         //user is logged in
         dispatch(login({
           email: userAuth.email,
@@ -36,12 +37,12 @@ function App() {
     <div className="app">
       <Header />
       {!user ? <Login /> : (
-        <div className="app__body">
-        <Sidebar />
-        <Feed />
-        <Widgets />
-      </div>
-        )}
+        <HomePage>
+          <Sidebar />
+          <Feed />
+          <Widgets />
+        </HomePage>
+      )}
     </div>
   );
 }

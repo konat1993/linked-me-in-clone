@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import HeaderOption from './HeaderOption';
+import HeaderOption from '../HeaderOption/HeaderOption';
 
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
