@@ -96,6 +96,9 @@
             }
         }
     }
+    .sidebar__expander {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -106,5 +109,12 @@
 @media screen and (max-width: 768px) {
     .sidebar {
         position: static;
+        align-self: center;
+        width: 90%;
+        margin-bottom: 20px;
+
+        .sidebar__bottom {
+            display: none;
+        }
     }
 }

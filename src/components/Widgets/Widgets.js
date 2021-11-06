@@ -4,7 +4,8 @@ import InfoIcon from '@material-ui/icons/Info'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 
 import "./Widgets.scss"
-export const Widgets = () => {
+export const Widgets = (props) => {
+    const { mobileWidgetClass } = props
 
     const newsArticle = (heading, subtitle) => (
         <div className="widgets__article">
@@ -19,7 +20,7 @@ export const Widgets = () => {
     )
 
     return (
-        <div className="widgets">
+        <div className={`${mobileWidgetClass ? mobileWidgetClass : 'widgets'}`}>
             <div className="widgets__header">
                 <h2>LinkedIn News</h2>
                 <InfoIcon />

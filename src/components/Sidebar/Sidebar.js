@@ -1,21 +1,22 @@
 import React from 'react'
 
-import {selectUser} from "../../features/userSlice"
-import {useSelector} from "react-redux"
+import { selectUser } from "../../features/userSlice"
+import { useSelector } from "react-redux"
 
 import { Avatar } from '@material-ui/core'
-
+import { MobileExpander } from "../MobileExpander/MobileExpander"
 import "./Sidebar.scss"
 export const Sidebar = () => {
-const user = useSelector(selectUser)
+    const user = useSelector(selectUser)
 
     const recentItem = (topic) => {
         return <div className="sidebar__recentItem">
-                 <span className="sidebar__hash">#</span>
-                 <p>{topic}</p>
-              </div>
+            <span className="sidebar__hash">#</span>
+            <p>{topic}</p>
+        </div>
     }
-   return (
+
+    return (
         <div className="sidebar">
             <div className="sidebar__top">
                 <img src="https://media-exp1.licdn.com/dms/image/C4D16AQFnpQ1Eh_UQdQ/profile-displaybackgroundimage-shrink_350_1400/0/1628512105117?e=1639612800&v=beta&t=xWFM-9opNQaTUnCWNK5tNLrP7dBTICADk9Jt9NkKTDg" alt="avatarBg" />
@@ -42,6 +43,10 @@ const user = useSelector(selectUser)
                 {recentItem("design")}
                 {recentItem("developer")}
             </div>
+
+
+
+            <MobileExpander />
         </div>
     )
 }

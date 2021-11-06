@@ -21,5 +21,8 @@
     .homePage {
         flex-direction: column;
         max-width: 80vw;
+        .widgets {
+            display: none;
+        }
     }
 }
