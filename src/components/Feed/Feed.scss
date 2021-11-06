@@ -28,6 +28,7 @@
                     outline-width: 0;
                     margin-left: 10px;
                     font-weight: 600;
+                    width: 100%;
                 }
                 button {
                     display: none;
@@ -45,5 +46,16 @@
 @media screen and (max-width: 1024px) {
     .feed {
         flex: 0.7;
+    }
+}
+@media screen and (max-width: 500px) {
+    .feed {
+        .feed__inputOptions {
+            flex-direction: row;
+            flex-wrap: wrap;
+            > div {
+                width: 50%;
+            }
+        }
     }
 }

@@ -30,3 +30,13 @@
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 470px) {
+    .post__buttons {
+        flex-wrap: wrap;
+
+        > div {
+            width: 50%;
+        }
+    }
+}
